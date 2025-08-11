@@ -305,6 +305,9 @@ export default function App() {
 
   useEffect(()=>{
     const onKey = (e) => {
+           // Prevent timer controls when typing in input or textarea
+      const tag = e.target.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || e.target.isContentEditable) return;
       if (e.code === 'Space') { e.preventDefault(); setRunning(r=>!r); }
       if (e.key === 'n') setSessionEnd(Date.now()+1000);
       if (e.key === 's') setShowSettings(s => !s);
