@@ -1,4 +1,5 @@
-    Modern Pomodoro - Polished
+Pomodoro
+
 
 Run:
 1. npm install
